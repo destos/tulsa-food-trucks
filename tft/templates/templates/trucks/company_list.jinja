@@ -1,11 +1,12 @@
-{% extends "base.jinja" %}
+{% extends 'base.jinja' %}
+{% from 'trucks/macros.jinja' import company_list_item %}
 
 {% block header_title %}Trucks{% endblock %}
 
-{% block content %}
+{% block content scoped %}
     <ul data-role="listview" {% block list_attr %}data-filter="true"{% endblock %}>
         {% for company in companies %}
-            <li><a href="{{company.get_detail_url()}}">{{ company.name }}</a></li>
+            {{ company_list_item(company, show_open_override) }}
         {% endfor %}
     </ul>
 {% endblock %}

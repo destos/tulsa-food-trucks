@@ -1,0 +1,12 @@
+{% extends 'base.jinja' %}
+
+{% block header_title %}Truck Checkin{% endblock %}
+
+{% block content %}
+
+<form method="post" action="{{ url('truck_checkin') }}" data-ajax="false">
+{% csrf_token %}
+{{form.as_p()}}
+<input type="submit" value="Checkin" />
+</form>
+{% endblock content %}

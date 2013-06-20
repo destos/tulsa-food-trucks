@@ -12,5 +12,5 @@ urlpatterns = patterns(
 	url(r'^$', HomeCompanyList.as_view(), name="home"),
     url(r'^', include('accounts.urls')),
     url(r'^', include('trucks.urls')),
-    url(r'^', include('waffle.urls')),
+    # url(r'^', include('waffle.urls')),
 )

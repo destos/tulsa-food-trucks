@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'django.contrib.gis',
     'django_extensions',
     'django_jinja',
     'south',
@@ -127,7 +128,7 @@ INSTALLED_APPS = (
     'accounts',
     'trucks',
     'templates',
-    'waffle',
+    # 'waffle', #add back when updating Django 1.5 to support custom user models
 )
 
 

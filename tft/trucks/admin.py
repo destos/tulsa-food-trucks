@@ -1,4 +1,5 @@
-from django.contrib import admin
+# from django.contrib import admin
+from django.contrib.gis import admin
 
 from trucks.models import (Company, Checkin, CompanyLink, Employee, Following,
                            Cuisine)
@@ -17,6 +18,6 @@ class CompanyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Company, CompanyAdmin)
-admin.site.register(Checkin)
+admin.site.register(Checkin, admin.GeoModelAdmin)
 admin.site.register(Following)
 admin.site.register(Cuisine)

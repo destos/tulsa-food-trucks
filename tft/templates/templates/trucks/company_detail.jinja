@@ -6,6 +6,15 @@
     <div>
         <p>{{company.description}}</p>
     </div>
+    <ul>
+        {% for checkin in company.checkins.active() %}
+            <li>
+                <img src="http://maps.googleapis.com/maps/api/staticmap?center={{checkin.location.get_y()}},{{checkin.location.get_x()}}&zoom=14&size=320x100&sensor=false&markers=color:blue|label:T|{{checkin.location.get_y()}},{{checkin.location.get_x()}}">
+                <p>{{checkin.location.coords}}</p>
+                <p>{{checkin.time_left}}</p>
+            </li>
+        {% endfor %}
+    </ul>
     {% if company.links.all or company.phone or company.email %}
     <table id="company-info" class="ui-responsive table-stroke">
         <thead>

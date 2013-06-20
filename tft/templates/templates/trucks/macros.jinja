@@ -1,0 +1,11 @@
+{% macro company_list_item(company, show_open=true) %}
+    <li><a href="{{company.get_detail_url()}}">
+        {{ company.name }}
+        {{ show_open }}
+        {%- if show_open and company.open -%}
+            <p class="ui-li-aside company-open"><strong>open</strong></p>
+        {%- elif show_open -%}
+            <p class="ui-li-aside company-closed"><strong>closed</strong></p>
+        {%- endif -%}
+    </a></li>
+{% endmacro %}

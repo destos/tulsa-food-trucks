@@ -4,7 +4,9 @@
 {% block header_title %}Tulsa Food Trucks{% endblock %}
 
 {% block content %}
-    <h2>Currently active trucks</h2>
+    {% set show_open_override=true %}
+    <h2>Currently open trucks</h2>
     {{super()}}
     {% block list_attr %}{% endblock %}
+    <p>This list of currently open trucks probably isn't complete, you can help us make it better by letting the truck owners know about us or remind them to check in ;)</p>
 {% endblock %}

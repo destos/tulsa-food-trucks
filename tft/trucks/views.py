@@ -1,7 +1,7 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import CreateView, DetailView, FormView, ListView, UpdateView
 from django.shortcuts import get_object_or_404
 
-from .models import Company, Cuisine
+from .models import Company, Cuisine, Checkin
 
 
 class CompanyList(ListView):
@@ -39,5 +39,14 @@ class CompanyCuisineList(CompanyList):
 class HomeCompanyList(CompanyList):
     template_name = 'home.jinja'
 
-    # def get_queryset(self):
-    #     return self.model.objects.has_active_trucks()
+    def get_queryset(self):
+        return self.model.objects.open_trucks()
+
+
+class CheckinView(CreateView):
+    template_name = 'trucks/checkin_form.jinja'
+    model = Checkin
+    fields = ['location', 'start_time', 'end_time']
+
+# class EditCeckin(UpdateView):
+    

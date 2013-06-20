@@ -16,7 +16,11 @@ requirements
 Installation
 ------------
 
-**Basic installation**
+**Install Postgres and PostGist on OSX**
+
+**if on OSX 10.8 when install all the things with brew!**
+
+```$ brew install postgis libgeoip gdal```
 
 Setup a virtual environment if you need to.
 
@@ -38,20 +42,4 @@ You should be able to use runserver to start things up.
 
 ```$ ./manage.py runserver```
 
-These instructions may not be correct…
-
-**Install Postgres and PostGist on OSX**
-
-**this may not work currently**
-
-https://gist.github.com/3188632
-
-**if on OSX 10.8 when installing postgresql**
-
-```$ brew install postgresql9 --without-ossp-uuid```
-
-then
-
-```$ brew install postgis15```
-
-
+These instructions are not guaranteed to work…
