@@ -4,9 +4,15 @@
 {% block header_title %}Trucks{% endblock %}
 
 {% block content scoped %}
-    <ul data-role="listview" {% block list_attr %}data-filter="true"{% endblock %}>
-        {% for company in companies %}
-            {{ company_list_item(company, show_open_override) }}
-        {% endfor %}
-    </ul>
+    {% if companies %}
+        <ul data-role="listview" {% block list_attr %}data-filter="true"{% endblock %}>
+            {% for company in companies %}
+                {{ company_list_item(company, show_open_override) }}
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% block list_no_companies %}
+            <h2>No Trucks found :(</h2>        
+        {% endblock %}
+    {% endif %}
 {% endblock %}
